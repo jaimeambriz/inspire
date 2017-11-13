@@ -11,36 +11,47 @@ function TodoController() {
 	// Use this getTodos function as your callback for all other edits
 	function getTodos(){
 		//FYI DONT EDIT ME :)
-		debugger
 		todoService.getTodos(draw)
-		
-
 	}
 	getTodos()
-	function draw(todos) {
+	function draw(todoList) {
 		//WHAT IS MY PURPOSE?
 		//BUILD YOUR TODO TEMPLATE HERE
 		var template = ''
-		for (var i = 0; i < todos.length; i++) {
-			var todo = todos[i];
+		for (var i = 0; i < todoList.length; i++) {
+			var todo = todoList[i];
+			if (todo.completed === "false"){
+				todo.completed = false
+			}
+			if(todo.completed == true){
 			template += `
-			<div class= "checkbox">
-			<label><input type="checkbox " value="">${todo.description}</label>
-			</div>			
+			<div class="col-sm-12 check">
+			<input checked type="checkbox" onclick="app.controllers.todoController.toggleTodoStatus('${i}')">
+			<label class="line-through">${todo.description}</label>
+			<i class="glyphicon glyphicon-trash pull-right" onclick="app.controllers.todoController.removeTodo('${i}')"></i>
+			</div>	
 			`
-
+			}else {
+				template += `
+				<div class="col-sm-12 check">
+				<input type="checkbox" onclick="app.controllers.todoController.toggleTodoStatus('${i}')">
+				<label>${todo.description}</label>
+				<i class="glyphicon glyphicon-trash pull-right" onclick="app.controllers.todoController.removeTodo('${i}')"></i>
+				</div>	
+				`
+			}
 			
 		}
 		document.getElementById("todo").innerHTML = template
 	}
 
 	this.addTodoFromForm = function (e) {
-		debugger
 		e.preventDefault() // <-- hey this time its a freebie don't forget this
 		// TAKE THE INFORMATION FORM THE FORM
 		var form = e.target
 		var todo = {
-			description: form.todo.value
+			description: form.todo.value,
+			completed: false
 			// DONT FORGET TO BUILD YOUR TODO OBJECT
 		}
 
@@ -48,6 +59,7 @@ function TodoController() {
 		//DON'T FORGET TO REDRAW THE SCREEN WITH THE NEW TODO
 		//YOU SHOULDN'T NEED TO CHANGE THIS
 		todoService.addTodo(todo, getTodos)
+		// todoService.getTodos(draw)
 		                         //^^^^^^^ EXAMPLE OF HOW TO GET YOUR TOODOS AFTER AN EDIT
 	}
 
@@ -59,7 +71,7 @@ function TodoController() {
 
 	this.removeTodo = function (todoId) {
 		// ask the service to run the remove todo with this id
-
+		todoService.removeTodo(todoId, getTodos)
 		// ^^^^ THIS LINE OF CODE PROBABLY LOOKS VERY SIMILAR TO THE toggleTodoStatus
 	}
 

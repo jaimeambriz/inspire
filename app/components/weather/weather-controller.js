@@ -14,21 +14,17 @@ function WeatherController(){
 	
 		function drawWeather(weather){
 			var	template = `
-				<div class="col-xs-2 weather-background">
-					<div class="row">
-						<div class="col-xs-12">
-							<p>${weather.city}: ${weather.temp}°F</p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-xs-6">
-							<p>L:${weather.low}°F</p>
-						</div>
-						<div class="col-xs-6">
-							<p>H:${weather.high}°F</p>
-						</div>
-					</div>
-				</div>`
+			<div class="col-xs-12">
+			<p>${weather.city}: ${weather.temp}°F</p>
+		</div>
+		<div class="row">
+			<div class="col-xs-6 low">
+				<p>Low:${weather.low}°F</p>
+			</div>
+			<div class="col-xs-6 weather-hi">
+				<p>Hi:${weather.high}°F</p>
+			</div>
+		</div>`
 			weatherElem.innerHTML = template
 		}
 }
