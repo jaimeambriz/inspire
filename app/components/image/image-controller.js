@@ -5,7 +5,7 @@ function ImageController() {
 	getImage = function getImage() {
 		imageService.getImage(function (image) {
 			document.body.style.backgroundImage =`url(${image.url})`
-		})
+		});
 	}
  getImage()
 }
