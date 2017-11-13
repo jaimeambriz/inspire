@@ -1,0 +1,66 @@
+
+/* *{
+    border: 1px red solid;
+} */
+body{
+ background-size: cover;
+ background-repeat: no-repeat; 
+ min-height: 100%;  
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+h1{
+    color:white;
+    text-align: center;
+}
+h4{
+    font-family: fantasy;
+    color: white;
+    
+}
+p{
+    color: white;
+    text-align: center;
+}
+blockquote{
+    margin-bottom: 0;
+}
+#weather{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.30);
+    text-align: center;
+
+}
+#quote{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 1rem;
+        background-color: rgba(0, 0, 0, 0.30);
+        text-align: center;
+}
+#author{
+    color: white;
+    font-family: fantasy;
+}
+#todo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.30);
+}
+.form-group{
+    text-align: center;
+}
+input, .input{
+    text-align:center;
+    padding-left: 15px
+}
+label{
+    color: white;
+}

@@ -3,24 +3,67 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Inspire</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	 crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+	 crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body id="body">
-	<div id="weather">
-		Your Weather Template
+	<div class="container-fluid">
+
+		<div class="row" id="weather">
+			<!-- <div class="col-xs-2">
+				<div class="row">
+					<div class="col-xs-12">
+						<p>${weather.temp}°F</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6">
+						<p2>${weather.low}°F</p2>
+					</div>
+					<div class="col-xs-6">
+						<p2>${weather.high}°F</p2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<p> Picture of Weather (clouds, sunny, rain, etc)</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-12">
+						<p>${weather.city}</p>
+					</div>
+				</div>
+			</div> -->
+		</div>
+		<div class="row" id="clock">
+			<div class="col-sm-12">
+				<h1>CLOCK GOES HERE</h1>
+			</div>
+		</div>
+		<div id="quote">
+			<blockquote class="blockquote-reverse">
+				<p style="font-family:fantasy;">“Life itself is your teacher, and you are in a state of constant learning.” </p>
+				<footer>Bruce Lee</footer>
+			</blockquote>
+		</div>
+		<div class="row" id="todo">
+			<form class="form" onsubmit="app.controllers.todoController.addTodoFromForm(event)">
+				<div class="col-sm-12" id="add-todo">
+					<div class="form-group input">
+						<label class="lable lable-default" for="Todo">Todo</label>
+						<input type="text" name="todo" class="form-control input-group" placeholder="add todo" required>
+						<button type="submit" class="btn btn-success">add</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		
 	</div>
-
-	<div id="quote">
-		The Quote
-	</div>
-
-	<div id="todo">
-		<form onsubmit=""></form>
-		A Todo List
-	</div>
-
-
 
 
 	<!--JS Libraries-->
@@ -30,15 +73,24 @@
 	<script src="app/components/image/image-service.js"></script>
 	<script src="app/components/quote/quote-service.js"></script>
 	<script src="app/components/todo/todo-service.js"></script>
+	<script src="app/components/clock/clock-service.js"></script>
 
 	<!--Controllers-->
 	<script src="app/components/weather/weather-controller.js"></script>
 	<script src="app/components/image/image-controller.js"></script>
 	<script src="app/components/quote/quote-controller.js"></script>
 	<script src="app/components/todo/todo-controller.js"></script>
+	<script src="app/components/clock/clock-controller.js"></script>
 
 	<!--Initialize App-->
 	<script src="app/init.js"></script>
 </body>
 
 </html>
+
+
+
+
+<!-- <div class= "checkbox">
+	<label><input type="checkbox " value="">${todo.description}</label>
+</div> -->

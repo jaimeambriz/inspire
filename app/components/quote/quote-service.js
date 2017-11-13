@@ -9,7 +9,12 @@ function QuoteService(){
 			res = JSON.parse(res)
 			console.log('Quote Data:', res)
 			//Now What?
-			callWhenDone(res)
+			var quote ={
+				quote: res.quote,
+				author: res.author
+			}
+			console.log("quote ", quote)
+			callWhenDone(quote)
 		})
 	}
 }

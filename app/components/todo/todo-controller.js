@@ -11,21 +11,36 @@ function TodoController() {
 	// Use this getTodos function as your callback for all other edits
 	function getTodos(){
 		//FYI DONT EDIT ME :)
+		debugger
 		todoService.getTodos(draw)
-	}
+		
 
+	}
+	getTodos()
 	function draw(todos) {
 		//WHAT IS MY PURPOSE?
 		//BUILD YOUR TODO TEMPLATE HERE
 		var template = ''
-		//DONT FORGET TO LOOP
+		for (var i = 0; i < todos.length; i++) {
+			var todo = todos[i];
+			template += `
+			<div class= "checkbox">
+			<label><input type="checkbox " value="">${todo.description}</label>
+			</div>			
+			`
+
+			
+		}
+		document.getElementById("todo").innerHTML = template
 	}
 
 	this.addTodoFromForm = function (e) {
+		debugger
 		e.preventDefault() // <-- hey this time its a freebie don't forget this
 		// TAKE THE INFORMATION FORM THE FORM
 		var form = e.target
 		var todo = {
+			description: form.todo.value
 			// DONT FORGET TO BUILD YOUR TODO OBJECT
 		}
 
