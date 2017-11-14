@@ -25,7 +25,7 @@ function TodoController() {
 				todo.completed = false
 			}
 			if(todo.completed == true){
-			count--
+			
 			template += `
 			<div class="col-sm-12 check">
 			<input checked type="checkbox" onclick="app.controllers.todoController.toggleTodoStatus('${i}')">
@@ -33,9 +33,8 @@ function TodoController() {
 			<i class="glyphicon glyphicon-trash pull-right" onclick="app.controllers.todoController.removeTodo('${i}')"></i>
 			</div>	
 			`
-			
 			}else {
-				count++
+				
 				template += `
 				<div class="col-sm-12 check">
 				<input type="checkbox" onclick="app.controllers.todoController.toggleTodoStatus('${i}')">
@@ -43,7 +42,7 @@ function TodoController() {
 				<i class="glyphicon glyphicon-trash pull-right" onclick="app.controllers.todoController.removeTodo('${i}')"></i>
 				</div>	
 				`
-				
+				count++
 			}
 			
 		}
