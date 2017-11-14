@@ -16,13 +16,13 @@ function WeatherController(){
 			var	template = `
 			<div class="col-xs-12">
 			<p>${weather.city}: ${weather.temp}°F</p>
-		</div>
-		<div class="row">
-			<div class="col-xs-6 low">
-				<p>Low:${weather.low}°F</p>
-			</div>
-			<div class="col-xs-6 weather-hi">
-				<p>High:${weather.high}°F</p>
+			<div class="row">
+				<div class="col-xs-6 low">
+					<p>Low:${weather.low}°F</p>
+				</div>
+				<div class="col-xs-6 weather-hi">
+					<p>High:${weather.high}°F</p>
+				</div>
 			</div>
 		</div>`
 			weatherElem.innerHTML = template
