@@ -22,7 +22,7 @@ function WeatherController(){
 				<p>Low:${weather.low}°F</p>
 			</div>
 			<div class="col-xs-6 weather-hi">
-				<p>Hi:${weather.high}°F</p>
+				<p>High:${weather.high}°F</p>
 			</div>
 		</div>`
 			weatherElem.innerHTML = template
