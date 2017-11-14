@@ -25,7 +25,6 @@ function TodoController() {
 				todo.completed = false
 			}
 			if(todo.completed == true){
-			
 			template += `
 			<div class="col-sm-12 check">
 			<input checked type="checkbox" onclick="app.controllers.todoController.toggleTodoStatus('${i}')">
@@ -34,7 +33,6 @@ function TodoController() {
 			</div>	
 			`
 			}else {
-				
 				template += `
 				<div class="col-sm-12 check">
 				<input type="checkbox" onclick="app.controllers.todoController.toggleTodoStatus('${i}')">
